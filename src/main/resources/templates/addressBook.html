@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+        <h1>Fill Information:</h1>
+        <form data-th-action="@{/contact}" data-th-object="${contact}" method="POST">
+            <p>
+                Name: 
+                <input type="text" data-th-field="*{name}">
+            </p>
+            
+            <br>
+            <p>
+                Email: 
+                <input type="text" data-th-field="*{email}">
+            </p>
+
+            <br>
+            <p>
+                Tel No.: 
+                <input type="text" data-th-field="*{telNo}">
+            </p>
+
+            <br>
+            <p>
+                <input type="submit" data-th-field="Save">
+            </p>
+        </form>
+    </body>
+</html>
