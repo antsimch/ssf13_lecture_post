@@ -22,6 +22,9 @@
                 <input type="text" data-th-field="*{email}">
                 <br>
                 <span class="error" data-th-if="${#fields.hasErrors('email')}" data-th-errors="*{email}">
+                <div data-th-if="${#fields.hasErrors('global')}">
+                    <p data-th-each="error : ${#fields.errors('global')}" data-th-text="${error}" class="error"></p>
+                </div>
             </p>
 
             <br>
