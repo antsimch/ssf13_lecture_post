@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
     <body>
+        <a href="/list">Contact List</a>
         <h1>Fill Information:</h1>
         <form data-th-action="@{/contact}" data-th-object="${contact}" method="POST">
             <p>
@@ -22,9 +23,6 @@
                 <input type="text" data-th-field="*{email}">
                 <br>
                 <span class="error" data-th-if="${#fields.hasErrors('email')}" data-th-errors="*{email}">
-                <div data-th-if="${#fields.hasErrors('global')}">
-                    <p data-th-each="error : ${#fields.errors('global')}" data-th-text="${error}" class="error"></p>
-                </div>
             </p>
 
             <br>
@@ -37,7 +35,19 @@
 
             <br>
             <p>
-                <input type="submit" data-th-field="Save">
+                Date of Birth: 
+                <input type="date" data-th-field="*{dateOfBirth}">
+                <br>
+                <span class="error" data-th-if="${#fields.hasErrors('dateOfBirth')}" data-th-errors="*{dateOfBirth}">
+                <span class="error" data-th-if="${#fields.hasErrors('age')}" data-th-errors="*{age}">
+            </p>
+
+            <div data-th-if="${#fields.hasErrors('global')}">
+                <p data-th-each="error : ${#fields.errors('global')}" data-th-text="${error}" class="error"></p>
+            </div>
+            <br>
+            <p>
+                <input type="submit" value="Save">
             </p>
         </form>
     </body>
